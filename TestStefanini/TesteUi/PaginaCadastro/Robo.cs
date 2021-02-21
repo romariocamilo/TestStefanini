@@ -23,10 +23,6 @@ namespace TestStefanini
         string url;
         List<Usuario> listaUsuarioMassa = new List<Usuario>();
 
-        ExtentReports extent;
-        ExtentHtmlReporter htmlReporter;
-        ExtentTest test;
-
         //Acessar pagina de cadastro
         [Given("que eu tenha a url destino")]
         public Robo ObtiUrl()
@@ -394,7 +390,6 @@ namespace TestStefanini
 
             Assert.IsTrue(massaValidada);
             Fechar(paginaCadastro.driver);
-            AdicionaAoRelatorio("Validar cadastro em massa");
             return this;
         }
 
@@ -428,32 +423,6 @@ namespace TestStefanini
         public Robo ValideiUsuarioRemovidoDaLista()
         {
             Printar(paginaCadastro.driver, "Remover usuarios cadastrados".Replace(' ', '_'), "ValidaExclusaoUsuario5", true);
-            AdicionaAoRelatorio("Remover usuarios cadastrados");
-            return this;
-        }
-
-        public Robo AdicionaAoRelatorio(string nomeTeste)
-        {
-            htmlReporter = new ExtentHtmlReporter(@"C:\teste\");
-
-            htmlReporter.Config.Theme = Theme.Dark;
-            htmlReporter.Config.DocumentTitle = "Relatório de testes";
-            htmlReporter.Config.ReportName = "Relatório de testes";
-
-            try
-            {
-                extent = new ExtentReports();
-                extent.AttachReporter(htmlReporter);
-                test = extent.CreateTest(nomeTeste);
-                extent.Flush();
-            }
-
-            catch (NoSuchElementException e)
-            {
-                test.Fail(e.StackTrace);
-                extent.Flush();
-            }
-
             return this;
         }
     }

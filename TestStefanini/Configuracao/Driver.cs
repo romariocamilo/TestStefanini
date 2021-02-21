@@ -10,6 +10,6 @@ namespace TestStefanini.Configuration
 {
     public class Driver
     {
-        public IWebDriver driver = new ChromeDriver();
+        public IWebDriver driver { get; private set; } = new ChromeDriver();
     }
 }

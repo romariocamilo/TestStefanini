@@ -473,7 +473,8 @@
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="PageObject\PaginaCadastro.cs" />
     <Compile Include="RoboGeralAuxilar\RoboGeral.cs" />
-    <Compile Include="TesteUi\PaginaCadastro\ClasseParaTesteIgnonar.cs" />
+    <Compile Include="TesteUi\ClassesParaTestesIgnorar\ClasseParaTesteIgnonar.cs" />
+    <Compile Include="TesteUi\ClassesParaTestesIgnorar\RoboIgnorar.cs" />
     <Compile Include="TesteUi\PaginaCadastro\PaginaCadastroTeste.cs" />
     <Compile Include="TesteUi\PaginaCadastro\Robo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -481,6 +482,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Funcionalidade\CadastroDeUsuarios.feature" />
+    <None Include="Funcionalidade\TestesBddIgnorar.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
